@@ -7,9 +7,9 @@ public interface UI {
 
     void attachController(Controller controller);
 
-    void repaintCup(BrickTable brickTable);
+    void updateCup(BrickTable brickTable);
 
-    void repaintHint(BrickTable brickTable);
+    void updateHint(BrickTable brickTable);
 
     void setScore(long score);
 

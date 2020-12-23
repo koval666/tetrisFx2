@@ -106,12 +106,12 @@ public class SimpleJavaFxUI implements JavaFxUI {
     }
 
     @Override
-    public void repaintCup(BrickTable brickTable) {
+    public void updateCup(BrickTable brickTable) {
 
     }
 
     @Override
-    public void repaintHint(BrickTable brickTable) {
+    public void updateHint(BrickTable brickTable) {
 
     }
 
