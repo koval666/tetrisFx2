@@ -69,4 +69,33 @@ public class SimpleControlState implements ControlState {
     public ControlState createCopy() {
         return new SimpleControlState(this);
     }
+
+    @Override
+    public boolean isRotating(Direction direction) {
+        switch (direction) {
+            case LEFT:
+                return isRotatingToLeft.get();
+            case RIGHT:
+                return isRotatingToRight.get();
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
+    @Override
+    public boolean isMoving(Direction direction) {
+        switch (direction) {
+            case LEFT:
+                return isMovingToLeft.get();
+            case RIGHT:
+                return isMovingToRight.get();
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
+    @Override
+    public boolean isDroppingDown() {
+        return isDroppingDown.get();
+    }
 }

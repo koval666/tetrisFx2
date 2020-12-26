@@ -12,4 +12,10 @@ public interface ControlState {
     void dropFigureDown(Action action);
 
     ControlState createCopy();
+
+    boolean isRotating(Direction direction);
+
+    boolean isMoving(Direction direction);
+
+    boolean isDroppingDown();
 }
