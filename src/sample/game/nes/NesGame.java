@@ -3,11 +3,14 @@ package sample.game.nes;
 import sample.game.Action;
 import sample.game.Direction;
 import sample.game.Game;
-import sample.game.nes.controlstate.ControlState;
-import sample.game.nes.controlstate.impl.SimpleControlState;
+import sample.game.nes.dictionary.SpeedDictionary;
+import sample.game.nes.state.control.ControlState;
+import sample.game.nes.state.control.impl.SimpleControlState;
 import sample.ui.UI;
 
 import static java.lang.Thread.interrupted;
+import static sample.game.nes.NesGameConfiguration.FRAME_TIME_MILLIS;
+import static sample.game.nes.NesGameConfiguration.FRAME_TIME_NANOS;
 
 public class NesGame implements Game {
 
@@ -15,6 +18,8 @@ public class NesGame implements Game {
 
     ControlState controlState;
     Thread activeGameThread;
+
+    final SpeedDictionary speedDictionary = new SpeedDictionary();
 
     @Override
     public void attachUI(UI ui) {
@@ -60,6 +65,16 @@ public class NesGame implements Game {
 
             //game cycle
 
+            tick();
+        }
+    }
+
+
+    private void tick() {
+        try {
+            Thread.sleep(FRAME_TIME_MILLIS, FRAME_TIME_NANOS);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e.getMessage(), e);
         }
     }
 }

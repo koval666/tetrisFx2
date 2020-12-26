@@ -1,8 +1,8 @@
-package sample.game.nes.controlstate.impl;
+package sample.game.nes.state.control.impl;
 
 import sample.game.Action;
 import sample.game.Direction;
-import sample.game.nes.controlstate.ControlState;
+import sample.game.nes.state.control.ControlState;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

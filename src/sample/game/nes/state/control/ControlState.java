@@ -1,4 +1,4 @@
-package sample.game.nes.controlstate;
+package sample.game.nes.state.control;
 
 import sample.game.Action;
 import sample.game.Direction;
