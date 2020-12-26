@@ -1,4 +1,4 @@
-package sample.game.data;
+package sample.game.nes.data;
 
 import sample.game.Brick;
 import sample.game.BrickTable;

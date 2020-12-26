@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import sample.controller.Controller;
 import sample.controller.simpleimpl.SimpleController;
 import sample.game.Game;
+import sample.game.nes.NesGame;
 import sample.ui.javafx.JavaFxUI;
 import sample.ui.javafx.simpleui.SimpleJavaFxUI;
 
@@ -21,14 +22,16 @@ public class Main extends Application {
         ui.attachController(controller);
         controller.attachGame(game);
         game.attachUI(ui);
-        stage.setScene(ui.getScene());
 
+        stage.setScene(ui.getScene());
         stage.setOnCloseRequest(event -> {
             Platform.exit();
             System.exit(0);
         });
         stage.setTitle("Tetris in JavaFX");
         stage.show();
+
+        game.startNew();
     }
 
 
@@ -41,7 +44,7 @@ public class Main extends Application {
     }
 
     private Game createGame() {
-        return null;
+        return new NesGame();
     }
 
 

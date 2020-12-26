@@ -1,10 +1,9 @@
-package sample.game;
+package sample.game.nes.controlstate;
 
-import sample.ui.UI;
+import sample.game.Action;
+import sample.game.Direction;
 
-public interface Game {
-
-    void attachUI(UI ui);
+public interface ControlState {
 
     void rotate(Direction direction, Action action);
 
@@ -12,5 +11,5 @@ public interface Game {
 
     void dropFigureDown(Action action);
 
-    void startNew();
+    ControlState createCopy();
 }
